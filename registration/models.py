@@ -3,12 +3,14 @@ from datetime import date
 
 # Create your models here.
 
+#Below here is Beneficiary Type model
 class BeneficiaryType(models.Model):
      Beneficiary_Choice=(
         ('Primary','Primary_Beneficiary'),
         ('Contingent', 'Contingent_Benficiary'),
     )
      BeneficiaryType=models.CharField(max_length=100,choices=Beneficiary_Choice)
+#Below here is EducationLevel model
 class EducationLevel(models.Model):
      Education_Status=(
         ('Elementaty','Elementary'),
@@ -17,12 +19,14 @@ class EducationLevel(models.Model):
         ('Postgraduate','Postgraduate'),
     )     
      EducationLevel=models.CharField(max_length=100,choices=Education_Status,null=True)
+#Below here is HealthStatus model
 class HealthStatus(models.Model):
      Health_status=(
         ('Healthy','Healthy'),
         ('UnHealthy','UnHealthy'),
     )
      HealthStatus=models.CharField(max_length=100,choices=Health_status,null=True)
+#Below here is Marriage Status
 class MaritialStatus(models.Model):
      Maritial_Status=(
         ('single','single'),
@@ -33,6 +37,7 @@ class MaritialStatus(models.Model):
     )
         
      MaritialStatus=models.CharField(max_length=100,choices=Maritial_Status,null=True)
+#Below here is Househodl Program Model
 
 class HouseholdProgram(models.Model):
      Household_program=(
@@ -44,6 +49,7 @@ class HouseholdProgram(models.Model):
     )
      HouseholdProgram=models.CharField(max_length=100,choices=Household_program,null=True)
 
+#Belo out here is Household Mddel
 
 
 
@@ -75,6 +81,7 @@ class Household(models.Model):
     def UpdatedBy(self):
         UpdatedBy= self.pk
         return UpdatedBy
+#below out here is Member Model
 
 class Member(models.Model):
      CreatedDate=models.DateTimeField(auto_now_add=True,null=True)
