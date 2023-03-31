@@ -1,7 +1,15 @@
 from django.db import models
 from datetime import date
+from django.contrib.auth.models import User 
+from django.contrib.auth.models import Group
+from django.contrib.auth.models import Permission
+from django.contrib.contenttypes.models import ContentType
+
+
+
 
 # Create your models here.
+
 
 #Below here is Beneficiary Type model
 class BeneficiaryType(models.Model):
@@ -54,6 +62,7 @@ class HouseholdProgram(models.Model):
 
 
 class Household(models.Model):
+   
     CreatedDate=models.DateTimeField(auto_now_add=True,null=True)
     updatedDate=models.DateTimeField(auto_now=True,null=True)
     
@@ -123,3 +132,4 @@ class Member(models.Model):
      def UpdatedBy(self):
         UpdatedBy= self.FirstName
         return UpdatedBy
+
